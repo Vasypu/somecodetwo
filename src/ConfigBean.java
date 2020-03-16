@@ -19,7 +19,7 @@ public class ConfigBean {
 
     private List<AppSystem> applicationSystems;
     private List<FuncPlatformRelease> platformReleases;
-    private List<String> contours;
+    private List<Contour> contours;
     private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger(ConfigBean.class.getSimpleName());
     public static final String CDS_DIR = System.getProperty("user.home") + File.separator + ".cdsgui";
     public static final String TECHPLATFORM_DIR = "techplatform";
@@ -82,7 +82,7 @@ public class ConfigBean {
 
     @XmlElementWrapper
     @XmlElement(name = "contour")
-    public List<String> getContours() {
+    public List<Contour> getContours() {
         if (contours == null) {
             contours = new ArrayList<>();
             //contours = Collections.EMPTY_LIST;

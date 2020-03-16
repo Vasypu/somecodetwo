@@ -8,6 +8,7 @@ import java.util.Objects;
 public class Contour extends CommonEntity {
 
     private List<Installation> installations;
+    private List<AppSystem> applicationSystems;
 
     public Contour() { }
 
@@ -20,6 +21,16 @@ public class Contour extends CommonEntity {
             installations = new ArrayList<>();
         }
         return installations;
+    }
+
+    @XmlElementWrapper
+    @XmlElement(name = "applicationSystem")
+    public List<AppSystem> getApplicationSystems() {
+        if (applicationSystems == null) {
+            //applicationSystems = Collections.EMPTY_LIST;
+            applicationSystems = new ArrayList<>();
+        }
+        return applicationSystems;
     }
 
     public void setInstallations(List<Installation> installations) {

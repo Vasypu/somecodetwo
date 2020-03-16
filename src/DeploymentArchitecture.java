@@ -24,11 +24,11 @@ import java.util.List;
 
         private String version = "1.0";
 
-        private List<String> applicationSystems;
-        private List<String> contours;
-        private List<String> platformReleases;
-        private List<String> techPlatformMapping;
-        private List<String> retiredTechPlatforms;
+        private List<AppSystem> applicationSystems;
+        private List<Contour> contours;
+        private List<FuncPlatformRelease> platformReleases;
+        private List<TechPlatformMapping> techPlatformMapping;
+        private List<RetiredTechPlatform> retiredTechPlatforms;
 
         @XmlAttribute
         public String getVersion() {
@@ -41,7 +41,7 @@ import java.util.List;
 
         @XmlElementWrapper
         @XmlElement(name = "applicationSystem")
-        public List<String> getApplicationSystems() {
+        public List<AppSystem> getApplicationSystems() {
             if (applicationSystems == null) {
                 //applicationSystems = Collections.EMPTY_LIST;
                 applicationSystems = new ArrayList<>();
@@ -52,7 +52,7 @@ import java.util.List;
 
         @XmlElementWrapper
         @XmlElement(name = "contour")
-        public List<String> getContours() {
+        public List<Contour> getContours() {
             if (contours == null) {
                 contours = new ArrayList<>();
                 //contours = Collections.EMPTY_LIST;
@@ -65,7 +65,7 @@ import java.util.List;
 
         @XmlElementWrapper
         @XmlElement(name = "platformRelease")
-        public List<String> getPlatformReleases() {
+        public List<FuncPlatformRelease> getPlatformReleases() {
             if (platformReleases == null) {
                 platformReleases = new ArrayList<>();
                 //platformReleases = Collections.EMPTY_LIST;
@@ -75,7 +75,7 @@ import java.util.List;
 
         @XmlElementWrapper
         @XmlElement(name = "mapping")
-        public List<String> getTechPlatformMapping() {
+        public List<TechPlatformMapping> getTechPlatformMapping() {
             if (techPlatformMapping == null) {
                 techPlatformMapping = new ArrayList<>();
                 //techPlatformMapping = Collections.EMPTY_LIST;
@@ -85,7 +85,7 @@ import java.util.List;
 
         @XmlElementWrapper
         @XmlElement(name = "entry")
-        public List<String> getRetiredTechPlatforms() {
+        public List<RetiredTechPlatform> getRetiredTechPlatforms() {
             if (retiredTechPlatforms == null) {
                 retiredTechPlatforms = new ArrayList<>();
                 //retiredTechPlatforms = Collections.EMPTY_LIST;
@@ -93,7 +93,7 @@ import java.util.List;
             return retiredTechPlatforms;
         }
 
-        public void setRetiredTechPlatforms(List<String> retiredTechPlatforms) {
+        public void setRetiredTechPlatforms(List<RetiredTechPlatform> retiredTechPlatforms) {
             this.retiredTechPlatforms = retiredTechPlatforms;
         }
 

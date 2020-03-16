@@ -28,8 +28,18 @@ public class SomeCodeTwo {
             });
         }
 
+        CFG.getCfgSettings().getContours().forEach(as -> {
+            as.getInstallations().forEach(sa -> {
+                System.out.println("as " + sa.getAppSystemRef().getName());
+            });
+        });
+
         CFG.getDeploymentArchitecture().getContours().forEach(as -> {
-            System.out.println("as " + as);
+            as.getInstallations().forEach(sa -> {
+                System.out.println("as " + sa.getAppSystemRef().getName());
+
+            });
+
         });
 
     }
